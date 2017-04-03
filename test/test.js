@@ -27,7 +27,7 @@ describe('Orcinus', function() {
               "8001:8001",
             ],
             "environment" : [
-	    "FO  O=bar",
+	      "FOO=bar",
             ],
             "network": "orcinus-unit-testing-stack",
             "image": "nginx",
@@ -81,12 +81,12 @@ describe('Orcinus', function() {
     it('should be fail to initialize cluster with no service', function(done) {
       this.timeout(timeout);
       let data = {
-      	"stack" : "orcinus-unit-testing-stack",
+        "stack" : "orcinus-unit-testing-stack",
       }
       try {
         orcinusCreate.init(data);
       } catch(e) {
-      	let cmd = 'docker ps | sed -n 2,1p | grep web | cut -d\' \' -f 1';
+        let cmd = 'docker ps | sed -n 2,1p | grep web | cut -d\' \' -f 1';
         chp.exec(cmd, (err, stdout, stderr) => {
           done();
         });
@@ -101,7 +101,7 @@ describe('Orcinus', function() {
             "image": "nginx",
             "cpu": "1",
             "memory": "128mb"
-       	  }
+          }
         }
       }
       try {

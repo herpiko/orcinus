@@ -18,21 +18,21 @@ const timeout = 26000;
 describe('Orcinus', function() {
   describe('Create', function() {
     it('should be able to create a cluster instance via API', function(done) {
-			this.timeout(timeout);
-			let data = {
+      this.timeout(timeout);
+      let data = {
       	"stack" : "orcinus-unit-testing-stack",
       	"services": {
-        	"web": {
-						"ports" : [
-							"8001:8001",
-						],
-						"environment" : [
-							"FOO=bar",
-						],
-          	"network": "orcinus-unit-testing-stack",
-          	"image": "nginx",
-          	"cpu": "1",
-          	"memory": "128mb"
+        "web": {
+          "ports" : [
+            "8001:8001",
+            ],
+		  "environment" : [
+	    	"FOO=bar",
+		  ],
+          	 "network": "orcinus-unit-testing-stack",
+          	 "image": "nginx",
+          	 "cpu": "1",
+          	 "memory": "128mb"
       		}
       	}
 			}
